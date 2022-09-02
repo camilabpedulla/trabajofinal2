@@ -1,0 +1,20 @@
+{% extends 'WebPage/base.html' %}
+
+
+{% block list_productos %}
+    
+    {% for producto in object_list %}
+   
+       <p>  {{ producto }}  
+        
+        <a href="{% url 'detalle_producto' producto.id  %}">Ver mas</a> 
+        <a href="{% url 'borrar_producto' producto.id  %}">Borrar</a>
+        <a href="{% url 'editar_producto' producto.id  %}">Editar</a>
+        
+    
+      </p> 
+      
+        
+   {% endfor %}
+    
+{% endblock list_productos %}

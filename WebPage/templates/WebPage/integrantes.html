@@ -1,0 +1,32 @@
+{% extends 'WebPage/base.html' %}
+
+{% block lista_integrantes %}
+
+
+    
+<h1> Somos madre e hija, y empezamos este emprendimiento juntas </h1>   
+
+<p>
+    {% for persona in integrantes%}
+    
+    
+     
+         Yo soy {{persona.nombre }}, {{persona.profesion }}  
+         
+        <br>
+
+
+</p>
+
+          
+
+    {% endfor %}
+
+</div>
+
+<a href="{% url 'carga_integrantes' %}" role="button">Cargar nuevo integrante</a>
+
+<div>
+
+
+{% endblock lista_integrantes %}

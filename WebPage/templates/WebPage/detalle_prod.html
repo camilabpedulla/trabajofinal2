@@ -1,0 +1,13 @@
+{% extends 'WebPage/base.html' %}
+
+
+{% block detail_productos %}
+  
+   <p>El producto que selecciono es:{{ productos.nombre }}</p>
+   
+   <p>El modelo es:{{ productos.modelo }}</p>
+
+   <p>Tiene un precio de:  {{ productos.precio}}</p>
+      
+
+{% endblock detail_productos %}

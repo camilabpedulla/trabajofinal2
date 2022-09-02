@@ -1,0 +1,22 @@
+{% extends 'WebPage/base.html' %}
+
+
+{% block contenido %}
+
+{% if request.user.is_authenticated %}
+
+<div>
+    <h2> 
+        Bienvenido/a {{request.user.username}} 
+        <img src="{{imagen}}" width="25" height="25" / alt="Avatar"> 
+    </h2>
+     
+    <p>
+        Ultimo inicio de sesion: {{ request.user.last_login }} 
+    </p>
+
+</div>
+
+{% endif %}
+
+{% endblock %}
