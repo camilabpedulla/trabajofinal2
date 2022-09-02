@@ -11,7 +11,7 @@ urlpatterns = [
     path('cerrar_sesion/', LogoutView.as_view(template_name= "log_web/logout.html"), name="cerrar_sesion"),
     path('editar/', editar_usuario, name = "editar_usuario"),
     path('avatar/', avatar, name="avatar"),
-    path("cargar_avatar/", agregar_avatar, name="agregar_avatar")
+    path("agregar_avatar/", agregar_avatar, name="agregar_avatar")
 ]
 
 # Para acceder a las imagenes desde el navegador

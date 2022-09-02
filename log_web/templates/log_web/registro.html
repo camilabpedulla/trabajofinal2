@@ -10,8 +10,8 @@
     {% endif  %}
     
     
-        <h1> <p style="color: blue"> Regístrate </p></h1> 
-        <h6> <p style="color: blue">¿Ya tienes una cuenta?<a href="{% url 'Iniciar' %}" role="button">Inicia sesión</a> </p></h6> 
+        <h1> <p style=color:black > Regístrate </p></h1> 
+        <h6> <p style="color: black">¿Ya tienes una cuenta?<a href="{% url 'Iniciar' %}" role="button"> Inicia sesión</a> </p></h6> 
         {% csrf_token %}
 
         {{ formulario.as_p }}

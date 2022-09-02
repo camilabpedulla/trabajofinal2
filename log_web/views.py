@@ -45,7 +45,7 @@ def iniciar_sesion (request):
 
         else: 
             context =  {
-            "error": "Formulario no valido",
+            "error": "Usuario o Contraseña incorrectos. Intente nuevamente",
             "formulario": formulario
             }
             return render (request, "log_web/login.html", context)
@@ -61,7 +61,7 @@ def registrar_usuario (request):
         formulario = Customizacion_usuario(request.POST)
         if formulario.is_valid():
             formulario.save()
-            return redirect ("/WebPage/inicio")
+            return redirect ("agregar_avatar")
         else:
           return render (request, "log_web/registro.html",{"formulario":formulario, "error": "Formulario no valido"})
         
