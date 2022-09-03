@@ -1,0 +1,26 @@
+{% extends 'WebPage/base.html' %}
+
+
+{% block detail_productos %}
+  
+<div style="text-align:center;">
+
+<h2> Detalle del producto </h2>   
+   
+ 
+   
+   El producto que selecciono es:   {{ productos.nombre }}<br>
+   
+   El modelo es:   {{ productos.modelo }}<br>
+
+   Tiene un precio de:   {{ productos.precio}}<br>
+
+   <a class="btn btn-primary" href="{% url 'inicio' %}" 
+   role="button" type="submit" 
+   style="BORDER: rgb(128,128,128) 1px groove; FONT-SIZE: 12pt; FONT-FAMILY: Verdana;
+   BACKGROUND-COLOR: rgb(255, 182, 193); COLOR:BLACK"  > volver </a> 
+
+
+</div>
+
+{% endblock detail_productos %}

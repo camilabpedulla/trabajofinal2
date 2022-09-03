@@ -1,0 +1,32 @@
+{% extends 'WebPage/base.html' %}
+
+{% block lista_integrantes %}
+
+<div style="text-align:center;">
+    
+<h1> Somos madre e hija, y empezamos este emprendimiento juntas </h1>   
+
+<p>
+    {% for persona in integrantes%}
+    
+    
+     
+         Yo soy {{persona.nombre }}, {{persona.profesion }}  
+         
+        <br>
+
+
+</p>
+        
+    {% endfor %}
+
+
+    <a class="btn btn-primary" href="{% url 'carga_integrantes' %}" 
+    role="button" type="submit" 
+    style="BORDER: rgb(128,128,128) 1px groove; FONT-SIZE: 12pt; FONT-FAMILY: Verdana;
+    BACKGROUND-COLOR: rgb(255, 182, 193); COLOR:BLACK"  > Cargar nuevo integrante </a>
+</div>
+
+
+
+{% endblock lista_integrantes %}

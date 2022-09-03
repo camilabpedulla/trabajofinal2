@@ -1,0 +1,12 @@
+{% extends 'WebPage/base.html' %} 
+    
+{% block carga_sucursales %}
+    <form  method="post" > {% csrf_token %}
+
+        {{ formulario.as_p }}
+        <input type="submit" value="Crear">
+        
+   </form>
+
+ 
+{% endblock carga_sucursales %}

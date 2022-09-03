@@ -1,0 +1,22 @@
+{% extends 'WebPage/base.html' %}
+
+{% block detail_productos %}
+
+    {% if error %}
+    
+    <p style="color: red"> {{ error}}  </p>
+
+    {% endif  %}
+
+  
+ 
+    <form  method="POST" > {% csrf_token %}
+        <h1> <p style="color: black"> Iniciar sesión </p></h1> 
+        <h6> <p style="color: black">¿No tienes una cuenta? <a href="{% url 'Registrarse' %}" role="button">Registrate</a> </p></h6> 
+        {{ formulario.as_p }}
+
+         <input type="submit" value="INGRESAR">
+        
+   </form>
+
+{% endblock detail_productos %}

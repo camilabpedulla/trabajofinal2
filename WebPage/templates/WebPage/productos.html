@@ -1,0 +1,64 @@
+{% extends 'WebPage/base.html' %}
+
+
+
+{% block lista_productos %}
+
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Productos</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Estos son todos los productos de nuestra tienda</p>
+        
+    </div>
+</header>
+
+
+
+<div>
+                
+    <form method="get">  
+      {{ formulario.as_p }}
+      <input type="submit" value="Buscar">
+    </form>  
+
+</div>  
+
+{% for producto in productos %}
+
+<div class="col mb-5">
+    <div class="card h-100">
+        <!-- Product image-->
+        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+        <!-- Product details-->
+        <div class="card-body p-4">
+            <div class="text-center">
+                <!-- Product name-->
+                <h5 class="fw-bolder">{{producto.nombre}}</h5>
+                <!-- Product price-->
+                {{producto.modelo}}
+                ${{producto.precio}}
+            </div>
+        </p> 
+            <a href="{% url 'detalle_producto' producto.id  %}">Ver mas</a> 
+            <a href="{% url 'borrar_producto' producto.id  %}">Borrar</a>
+            <a href="{% url 'editar_producto' producto.id  %}">Editar</a>
+
+        </p> 
+
+        </div>
+        <!-- Product actions-->
+        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+
+<a class="btn btn-primary" href="{% url 'carga_productos' %}" 
+role="button" type="submit" 
+style="BORDER: rgb(128,128,128) 1px groove; FONT-SIZE: 12pt; FONT-FAMILY: Verdana;
+BACKGROUND-COLOR: rgb(255, 182, 193); COLOR:BLACK"  > Cargar nuevo producto </a>
+
+{% endblock lista_productos %}

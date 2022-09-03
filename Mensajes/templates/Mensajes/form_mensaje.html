@@ -1,0 +1,12 @@
+{% extends 'WebPage/base.html' %} 
+    
+{% block contenido %}
+    <form  method="post" > {% csrf_token %}
+        <h3> Escriba el mensaje que desea enviar: </h3>   
+        {{ formulario.as_p }}
+        <input type="submit" value="Enviar">
+        
+   </form>
+
+ 
+{% endblock contenido %}

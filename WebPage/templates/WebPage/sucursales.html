@@ -1,0 +1,32 @@
+{% extends 'WebPage/base.html' %}
+
+{% block lista_sucursales %}
+ 
+<div style="text-align:center;">
+<h1 > Te presentamos todas nuestras sucursales </h1>   
+
+<p>
+    {% for sucursal in sucursales%}
+    
+         Sucursal {{sucursal.nombre }}  <br>
+         Direccion {{sucursal.direccion }}  <br>
+         Dias de Atencion {{sucursal.dias }} {{sucursal.horarios }} <br>
+        <br>
+  
+</p>
+              
+    {% endfor %}
+
+<a class="btn btn-primary" href="{% url 'carga_sucursales' %}" 
+role="button" type="submit" 
+style="BORDER: rgb(128,128,128) 1px groove; FONT-SIZE: 12pt; FONT-FAMILY: Verdana;
+BACKGROUND-COLOR: rgb(255, 182, 193); COLOR:BLACK"  > Cargar nueva sucursal </a>
+
+</div>
+
+
+  
+{% endblock lista_sucursales %}
+
+
+    

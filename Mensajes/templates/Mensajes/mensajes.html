@@ -1,0 +1,31 @@
+{% extends 'WebPage/base.html' %} 
+
+{% block contenido %}
+    
+<h1> Tienes los siguientes mensajes en tu bandeja </h1>   
+
+<p>
+    {% for mensaje in mensajes%}
+    
+         De: {{ request.user.username }}  <br>
+         Para: {{mensaje.receptor }}  <br>
+         Mensaje: {{mensaje.texto }} <br>
+         
+  
+</p>
+
+
+<p>
+    Ultimo inicio de sesion: {{ request.user.last_login }} 
+</p>
+
+              
+    {% endfor %}
+
+</div>
+
+<a href="{% url 'mensaje' %}" role="button">Escriba un mensaje</a>
+
+<div>
+  
+{% endblock contenido %}

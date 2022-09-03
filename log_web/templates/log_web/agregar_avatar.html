@@ -1,0 +1,15 @@
+{% extends 'WebPage/base.html' %}
+
+
+{% block contenido %}
+
+<form method="post" enctype="multipart/form-data">
+
+    {% csrf_token %}
+    <h3> <p style="color: black"> Ingrese una foto de perfil de usuario </p></h3> 
+      
+    {{ form.as_p }}
+    <input type="submit" value="Cargar">
+</form>
+
+{% endblock %}
